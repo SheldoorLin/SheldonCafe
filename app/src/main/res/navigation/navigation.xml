@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/navigation"
+            app:startDestination="@id/orderNewFragment">
+
+    <fragment android:id="@+id/orderNewFragment"
+              android:name="com.sheldon.sheldoncafe.ordernew.OrderNewFragment"
+              android:label="fragment_order_new"
+              tools:layout="@layout/fragment_order_new"/>
+
+    <fragment android:id="@+id/orderListFragment"
+              android:name="com.sheldon.sheldoncafe.orderlist.OrderListFragment"
+              android:label="fragment_order_list"
+              tools:layout="@layout/fragment_order_list"/>
+
+</navigation>

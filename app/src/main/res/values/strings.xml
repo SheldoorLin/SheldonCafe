@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SheldonCafe</string>
+    <string name="title_order_new_page">Home</string>
+    <string name="title_order_list_page">Dashboard</string>
+    <string name="order_confirm">confirm</string>
+    <string name="home_title_name">SheL Cafe</string>
+
+</resources>
