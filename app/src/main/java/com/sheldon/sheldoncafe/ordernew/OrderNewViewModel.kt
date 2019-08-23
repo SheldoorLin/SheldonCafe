@@ -30,17 +30,20 @@ class OrderNewViewModel : ViewModel() {
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
 
 
+    val recoderList = mutableListOf<ProductItem>()
+
+
+
     init {
         getProductDetailItem()
     }
 
     fun addToDetail(productItem: ProductItem) {
-        val addproduct :ArrayList<ProductItem> = ArrayList()
-        _productDetail.value = arrayListOf(productItem)
-        if(productDetail.value!!.contains(productItem)){
+        if(recoderList.contains(productItem)){
         }else{
-           addproduct.add(productItem)
-            _productDetail.value = addproduct
+            recoderList.addAll(listOf(productItem))
+        Log.d("Sheldon","recoderList $recoderList")
+            _productDetail.value = recoderList
         }
 }
 

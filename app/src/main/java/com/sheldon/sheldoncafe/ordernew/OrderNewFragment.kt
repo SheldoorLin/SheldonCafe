@@ -47,6 +47,7 @@ class OrderNewFragment : Fragment() {
             it.let {
                 Log.d("sheldon","productDetail$it")
                 (binding.orderNewRecyclDown.adapter as OrderDetailAdapter).submitList(it)
+                (binding.orderNewRecyclDown.adapter as OrderDetailAdapter).notifyDataSetChanged()
             }
         })
 

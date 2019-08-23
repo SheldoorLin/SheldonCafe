@@ -34,8 +34,8 @@
                 android:layout_height="0dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintTop_toBottomOf="@+id/order_new_recycl_up"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/order_new_recycl_up"
+                app:layout_constraintEnd_toEndOf="@+id/order_new_recycl_up"
                 app:layout_constraintBottom_toTopOf="@+id/btn_confirm"
                 tools:itemCount="7"
                 tools:listitem="@layout/item_order_new_detail_recycler"/>
