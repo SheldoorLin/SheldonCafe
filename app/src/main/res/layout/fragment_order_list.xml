@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
 
     </data>
@@ -7,11 +8,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:context=".orderlist.OrderListFragment">
-
-        <TextView
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/order_hit_list_recycler"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/title_order_list_page"/>
-
+                android:layout_height="match_parent"/>
     </FrameLayout>
 </layout>

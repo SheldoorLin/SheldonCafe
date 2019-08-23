@@ -25,10 +25,10 @@ class MapJsonAdapterFactory {
 }
 
 
-//fun Map<String, Order>.toOrderList(): List<Order>? {
-//    val list = mutableListOf<Order>()
-//    for ((key, value) in this) {
-//        list.add(value.apply { id = key })
-//    }
-//    return list
-//}
+fun Map<String, Order>.toOrderList(): List<Order>? {
+    val list = mutableListOf<Order>()
+    for ((key, value) in this) {
+        list.add(value.apply { id = key })
+    }
+    return list
+}

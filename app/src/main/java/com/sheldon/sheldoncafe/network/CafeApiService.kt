@@ -1,6 +1,7 @@
 package com.sheldon.sheldoncafe.network
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
+import com.sheldon.sheldoncafe.`object`.Order
 import com.sheldon.sheldoncafe.`object`.ProductItem
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -10,6 +11,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 private const val BASE_URL = "https://latte-ccbd9.firebaseio.com/"
 
@@ -34,6 +36,14 @@ private val retrofit = Retrofit.Builder()
 interface CafeApiService {
     @GET("items.json")
     fun getProductItems(): Deferred<List<ProductItem>>
+
+    @GET("orders.json")
+    fun getOrders(
+        @Query("orderBy") orderBy: String? = "\"account\"",
+        @Query("equalTo") equalTo: String? = "\"sheldon@74latte.com\""
+    ): Deferred<Map<String, Order>>
+
+
 }
 
 object CafeApi {

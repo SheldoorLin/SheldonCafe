@@ -11,5 +11,10 @@
     <string name="order_item_name">Latte</string>
     <string name="item_ice_type">Type</string>
     <string name="item_suger_text">Suger</string>
+    <string name="his_order_num">Order Number:</string>
+    <string name="his_order_time">Order Time:</string>
+    <string name="his_order_account">Order Account :</string>
+    <string name="hit_total_item_text">Total Items:</string>
+    <string name="his_total_price">Total Price:</string>
 
 </resources>
