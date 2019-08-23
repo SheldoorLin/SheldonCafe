@@ -4,5 +4,12 @@
     <string name="title_order_list_page">Dashboard</string>
     <string name="order_confirm">confirm</string>
     <string name="home_title_name">SheL Cafe</string>
+    <string name="order_Iced">Iced</string>
+    <string name="order_hot">Hot</string>
+    <string name="order_suger_yes">Yes</string>
+    <string name="radiobtn_suger_no">No</string>
+    <string name="order_item_name">Latte</string>
+    <string name="item_ice_type">Type</string>
+    <string name="item_suger_text">Suger</string>
 
 </resources>
