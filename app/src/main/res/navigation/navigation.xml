@@ -13,6 +13,6 @@
     <fragment android:id="@+id/orderListFragment"
               android:name="com.sheldon.sheldoncafe.orderlist.OrderListFragment"
               android:label="fragment_order_list"
-              tools:layout="@layout/fragment_order_list"/>
+              tools:layout="@layout/fragment_order_list"/><action android:id="@+id/action_global_orderNewFragment" app:destination="@id/orderNewFragment"/><action android:id="@+id/action_global_orderListFragment" app:destination="@id/orderListFragment"/>
 
 </navigation>

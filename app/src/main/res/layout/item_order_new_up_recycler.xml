@@ -2,25 +2,29 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
     <data>
-
+        <variable name="productItem"
+                  type="com.sheldon.sheldoncafe.object.ProductItem"/>
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="100dp"
-            android:layout_height="100dp">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
         <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:paddingTop="4dp"
                 android:paddingBottom="4dp"
+                android:scaleType="center"
                 android:paddingStart="4dp"
                 android:paddingEnd="4dp"
-                app:srcCompat="@drawable/image_placeholder"
+                app:imageUrl="@{productItem.image}"
+                tools:srcCompat="@drawable/image_placeholder"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintVertical_bias="0.0"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

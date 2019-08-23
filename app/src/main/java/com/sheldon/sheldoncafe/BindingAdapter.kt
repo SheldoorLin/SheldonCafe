@@ -3,8 +3,11 @@ package com.sheldon.sheldoncafe
 import android.widget.ImageView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.sheldon.sheldoncafe.`object`.ProductItem
+import com.sheldon.sheldoncafe.ordernew.OrderNewAdapter
 
 /**
  * Uses the Glide library to load an image by URL into an [ImageView]
@@ -21,4 +24,11 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
                     .error(R.drawable.ic_broken_image))
             .into(imgView)
     }
+}
+
+
+@BindingAdapter("orderNewList")
+fun bindUpRecyclerView(recyclerView: RecyclerView, data: List<ProductItem>?) {
+    val adapter = recyclerView.adapter as OrderNewAdapter
+    adapter.submitList(data)
 }

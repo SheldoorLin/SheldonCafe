@@ -2,7 +2,8 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
     <data>
-
+        <variable name="viewModel"
+                  type="com.sheldon.sheldoncafe.ordernew.OrderNewViewModel"/>
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -11,7 +12,6 @@
 
         <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/order_new_recycl_up"
-
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:paddingBottom="4dp"
@@ -24,8 +24,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 tools:itemCount="7"
                 tools:listitem="@layout/item_order_new_up_recycler"
-
-                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.0"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"/>
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -39,8 +39,6 @@
                 app:layout_constraintBottom_toTopOf="@+id/btn_confirm"
                 tools:itemCount="7"
                 tools:listitem="@layout/item_order_new_detail_recycler"/>
-
-
 
 
         <Button

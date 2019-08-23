@@ -1,15 +1,17 @@
 package com.sheldon.sheldoncafe.network
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
+import com.sheldon.sheldoncafe.`object`.ProductItem
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import kotlinx.coroutines.Deferred
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.http.GET
 
-private const val BASE_URL = "https://api.appworks-school.tw/api/1.0/"
-// https://latte-ccbd9.firebaseio.com
+private const val BASE_URL = "https://latte-ccbd9.firebaseio.com/"
 
 
 private val moshi = Moshi.Builder()
@@ -28,9 +30,12 @@ private val retrofit = Retrofit.Builder()
     .baseUrl(BASE_URL)
     .build()
 
-interface CafeApiService{
 
+interface CafeApiService {
+    @GET("items.json")
+    fun getProductItems(): Deferred<List<ProductItem>>
 }
+
 object CafeApi {
     val retrofitService: CafeApiService by lazy { retrofit.create(CafeApiService::class.java) }
 }

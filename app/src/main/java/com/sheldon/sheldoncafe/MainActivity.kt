@@ -5,20 +5,21 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.sheldon.sheldoncafe.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var textMessage: TextView
     lateinit var binding: ActivityMainBinding
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        val navController = this.findNavController(R.id.navHostFragment)
         when (item.itemId) {
             R.id.navigation_order_new_page -> {
-                textMessage.setText(R.string.title_order_new_page)
+                navController.navigate(R.id.action_global_orderNewFragment)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_order_list_page -> {
-                textMessage.setText(R.string.title_order_list_page)
+                navController.navigate(R.id.action_global_orderListFragment)
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -28,8 +29,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        textMessage = binding.message
         binding.navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
-
     }
 }
